@@ -1,8 +1,6 @@
-/* 1020 TC */
 (function () {
   var testID = "1020",
     testClass = "spz_t" + testID;
-
   // observer binding
   if (window.location.pathname == "/contact-us/sales-inquiry/") {
     var waitforclass = setInterval(function () {
@@ -22,8 +20,7 @@
         });
 
         function checkScreenSize() {
-          var newWindowWidth = window.innerWidth;
-
+          const newWindowWidth = window.innerWidth;
           if (newWindowWidth >= 960 && !isDesk) {
             isDesk = true;
             isTable = false;
@@ -49,61 +46,6 @@
       ) {
         clearInterval(submitCTAInterval);
 
-        // Downfunnel Main Code
-        function spiralyze_conversion_tag() {
-          var checkHiddenField = setInterval(function () {
-            var hiddenField = document.querySelector("input#AB_name__c");
-            if (hiddenField) {
-              clearInterval(checkHiddenField);
-              var conversionTag = getCookie("spiralyze_conversion_tag");
-              console.log(conversionTag);
-              if (conversionTag) {
-                const nativeInputValueSetter = Object.getOwnPropertyDescriptor(
-                  window.HTMLInputElement.prototype,
-                  "value"
-                ).set;
-                nativeInputValueSetter.call(hiddenField, conversionTag);
-                const event = new Event("input", { bubbles: true });
-                hiddenField.dispatchEvent(event);
-                // hiddenField.value = conversionTag;
-              }
-            }
-          }, 100);
-        }
-        function setCookie(name, value, days) {
-          var expires = "";
-          if (days) {
-            var date = new Date();
-            date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
-            expires = "; expires=" + date.toUTCString();
-          }
-          document.cookie = name + "=" + (value || "") + expires + "; path=/";
-        }
-        function getCookie(name) {
-          var nameEQ = name + "=";
-          var ca = document.cookie.split(";");
-          for (var i = 0; i < ca.length; i++) {
-            var c = ca[i];
-            while (c.charAt(0) == " ") c = c.substring(1, c.length);
-            if (c.indexOf(nameEQ) == 0)
-              return c.substring(nameEQ.length, c.length);
-          }
-          return null;
-        }
-        function hiddenValue(cookieName, cookieValue) {
-          var spzConversionTag = getCookie(cookieName);
-          if (!spzConversionTag) {
-            setCookie(cookieName, cookieValue, 1);
-          } else if (
-            spzConversionTag &&
-            !spzConversionTag.includes(cookieValue)
-          ) {
-            setCookie(cookieName, spzConversionTag + "," + cookieValue, 1);
-          }
-        }
-        hiddenValue("spiralyze_conversion_tag", "1020_v1");
-        spiralyze_conversion_tag();
-
         document
           .querySelector("main#mainContent section:last-child")
           .classList.add("formSection");
@@ -128,21 +70,24 @@
           .insertAdjacentHTML(
             "afterbegin",
             `<picture>
-				  <source media="(max-width:767px)" srcset="//res.cloudinary.com/spiralyze/image/upload/geotab/1001/mobile-logo.svg">
-				<img class="logo tab-only" src="//res.cloudinary.com/spiralyze/image/upload/geotab/1001/tab-logo.svg" alt="Geotab"></picture>`
+        <source media="(max-width:767px)" srcset="//res.cloudinary.com/spiralyze/image/upload/geotab/1001/mobile-logo.svg">
+        <img class="logo tab-only" src="//res.cloudinary.com/spiralyze/image/upload/geotab/1001/tab-logo.svg" alt="Geotab"></picture>`
           );
 
         // ADding steps
-        document.querySelector(".spz_t1020 .formWrapper h2").insertAdjacentHTML(
-          "beforebegin",
-          `
-							<div class="steps">
-								<div class="step active"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none"><circle cx="4" cy="4" r="4" fill="#00AEFF"></circle></svg></div>
-								<div class="step"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none"><circle cx="4" cy="4" r="4" fill="#EFF2F7"></circle></svg></div>
-							</div>
-						`
-        );
-
+        if (!document.querySelector(".spz_t1020 .formWrapper .steps")) {
+          document
+            .querySelector(".spz_t1020 .formWrapper h2")
+            .insertAdjacentHTML(
+              "beforebegin",
+              `
+                      <div class="steps">
+                          <div class="step active"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none"><circle cx="4" cy="4" r="4" fill="#00AEFF"></circle></svg></div>
+                          <div class="step"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none"><circle cx="4" cy="4" r="4" fill="#EFF2F7"></circle></svg></div>
+                      </div>
+                  `
+            );
+        }
         document
           .querySelectorAll(".MuiInputBase-root .MuiInputBase-input")
           .forEach(function (element) {
@@ -154,43 +99,18 @@
               .closest(".MuiGrid-root")
               .classList.add(element.id, "form-field");
           });
-
+        // Updating the label for the multiple region select field
         document.querySelector(
           ".spz_t1020 .formWrapper .form-field.multiple_region_select__c label"
         ).innerHTML = `Does your company operate in multiple regions? <span>(Optional)</span>`;
-
-        document
-          .querySelector(".form-field.How_Did_You_Hear_About_Geotab__c")
-          .insertAdjacentHTML(
-            "afterend",
-            `
-				<div class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12 MuiGrid-grid-md-6 MuiGrid-grid-lg-12 css-1m090re How_Did_You_Hear_About_Geotab__select form-field">
-				<div class="MuiFormControl-root MuiFormControl-fullWidth css-1bgh9rs">
-				<label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary Mui-required MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-6zglxn" data-shrink="false" for="How_Did_You_Hear_About_Geotab__select">How did you hear about us?</label>
-					<div required class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-gw8dj3">
-						<select required class="MuiInputBase-input MuiOutlinedInput-input css-13ny0hi" id="How_Did_You_Hear_About_Geotab__select" placeholder="Enter how you heard about Geotab…" tabindex="12">
-						  <option value="Search engine">Search engine</option>
-						  <option value="Ad">Ad</option>
-						  <option value="LinkedIn">LinkedIn</option>
-						  <option value="Social media">Social media</option>
-						  <option value="Recommended by a colleague">Recommended by a colleague</option>
-						  <option value="Blog or publication">Blog or publication</option>
-						  <option value="Other">Other</option>
-						</select>
-						<svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="MuiSelect-icon MuiSelect-iconOutlined css-w1zj6k"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.51792 6.57893L9.08633 14.4736C9.49241 15.1754 10.5076 15.1754 10.9137 14.4736L15.4821 6.57893C15.8882 5.87718 15.3806 4.99999 14.5684 4.99999H5.4316C4.61944 4.99999 4.11184 5.87718 4.51792 6.57893Z" fill="#3C5164"></path></svg>
-						<fieldset aria-hidden="true" class="MuiOutlinedInput-notchedOutline css-igs3ac"><legend class="css-yjsfm1"><span>How did you hear about us? *</span></legend></fieldset>
-						</div>
-					</div>
-				</div>`
-          );
 
         // Comment field logic
         // document.querySelector('.formWrapper .comments').classList.add('hidden')
         document.querySelector(".formWrapper .comments").insertAdjacentHTML(
           "beforebegin",
           `<div class="showComment"><svg class="plus" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M9.99984 4.16675V15.8334M4.1665 10.0001H15.8332" stroke="#0078D3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg><svg class="minus" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-					<path d="M5.76001 12H18.24" stroke="#0078D3"></path>
-					</svg>Questions/comments<span>&nbsp(Optional)</span></div>`
+        <path d="M5.76001 12H18.24" stroke="#0078D3"></path>
+        </svg>Questions/comments<span>&nbsp(Optional)</span></div>`
         );
 
         document
@@ -204,53 +124,46 @@
           .querySelector(".last_name")
           .insertAdjacentElement(
             "afterend",
-            document.querySelector(".Title__c")
-          );
-        document
-          .querySelector(".Title__c")
-          .insertAdjacentElement("afterend", document.querySelector(".email"));
-        document
-          .querySelector(".email")
-          .insertAdjacentElement("afterend", document.querySelector(".phone"));
-        document
-          .querySelector(".phone")
-          .insertAdjacentElement(
-            "afterend",
-            document.querySelector(".How_Did_You_Hear_About_Geotab__select")
-          );
-        document
-          .querySelector(".How_Did_You_Hear_About_Geotab__select")
-          .insertAdjacentElement(
-            "afterend",
-            document.querySelector(".multiple_region_select__c")
-          );
-        document
-          .querySelector(".multiple_region_select__c")
-          .insertAdjacentElement(
-            "afterend",
             document.querySelector(".company")
           );
         document
           .querySelector(".company")
           .insertAdjacentElement(
             "afterend",
+            document.querySelector(".Title__c")
+          );
+        document
+          .querySelector(".email")
+          .insertAdjacentElement(
+            "afterend",
             document.querySelector(".industry")
           );
         document
-          .querySelector(".industry")
-          .insertAdjacentElement(
-            "afterend",
-            document.querySelector(".fleet_size")
-          );
-        document
-          .querySelector(".fleet_size")
-          .insertAdjacentElement(
-            "afterend",
-            document.querySelector(".country")
-          );
-        document
-          .querySelector(".country")
-          .insertAdjacentElement("afterend", document.querySelector(".city"));
+          .querySelector(".city")
+          .insertAdjacentElement("afterend", document.querySelector(".phone"));
+        document.querySelector(".phone").insertAdjacentHTML(
+          "afterend",
+          `
+          <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12 MuiGrid-grid-md-6 MuiGrid-grid-lg-12 css-1m090re How_Did_You_Hear_About_Geotab__select form-field">
+          <div class="MuiFormControl-root MuiFormControl-fullWidth css-1bgh9rs">
+          <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary Mui-required MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-6zglxn" data-shrink="false" for="How_Did_You_Hear_About_Geotab__select">How did you hear about us?</label>
+            <div required class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-gw8dj3">
+              <select required class="MuiInputBase-input MuiOutlinedInput-input css-13ny0hi" id="How_Did_You_Hear_About_Geotab__select" placeholder="Enter how you heard about Geotab…" tabindex="12">
+                <option value="Search engine">Search engine</option>
+                <option value="Ad">Ad</option>
+                <option value="LinkedIn">LinkedIn</option>
+                <option value="Social media">Social media</option>
+                <option value="Recommended by a colleague">Recommended by a colleague</option>
+                <option value="Blog or publication">Blog or publication</option>
+                <option value="Other">Other</option>
+              </select>
+              <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="MuiSelect-icon MuiSelect-iconOutlined css-w1zj6k"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.51792 6.57893L9.08633 14.4736C9.49241 15.1754 10.5076 15.1754 10.9137 14.4736L15.4821 6.57893C15.8882 5.87718 15.3806 4.99999 14.5684 4.99999H5.4316C4.61944 4.99999 4.11184 5.87718 4.51792 6.57893Z" fill="#3C5164"></path></svg>
+              <fieldset aria-hidden="true" class="MuiOutlinedInput-notchedOutline css-igs3ac"><legend class="css-yjsfm1"><span>How did you hear about us? *</span></legend></fieldset>
+              </div>
+            </div>
+          </div>
+        `
+        );
 
         // changing placeholders
         document.querySelector(
@@ -302,7 +215,13 @@
         // Adding step 1 classes
         document
           .querySelectorAll(
-            ".spz_t1020 .formWrapper .MuiGrid-item.first_name, .spz_t1020 .formWrapper .MuiGrid-item.last_name, .spz_t1020 .formWrapper .MuiGrid-item.Title__c, .spz_t1020 .formWrapper .MuiGrid-item.email, .spz_t1020 .formWrapper .MuiGrid-item.phone, .spz_t1020 .formWrapper .How_Did_You_Hear_About_Geotab__select, .spz_t1020 .formWrapper .continue"
+            `.spz_t1020 .formWrapper .MuiGrid-item.first_name,
+              .spz_t1020 .formWrapper .MuiGrid-item.last_name,
+              .spz_t1020 .formWrapper .MuiGrid-item.company,
+              .spz_t1020 .formWrapper .MuiGrid-item.Title__c,
+              .spz_t1020 .formWrapper .MuiGrid-item.email,
+              .spz_t1020 .formWrapper .MuiGrid-item.industry,
+              .spz_t1020 .formWrapper .continue`
           )
           .forEach(function (step1Field) {
             step1Field.classList.add("step1Field");
@@ -311,7 +230,17 @@
         // Adding step 2 classes
         document
           .querySelectorAll(
-            ".spz_t1020 .formWrapper .MuiGrid-item.multiple_region_select__c, .spz_t1020 .formWrapper .MuiGrid-item.company, .spz_t1020 .formWrapper .MuiGrid-item.industry, .spz_t1020 .formWrapper .MuiGrid-item.fleet_size, .spz_t1020 .formWrapper .MuiGrid-item.country, .spz_t1020 .formWrapper .MuiGrid-item.city, .spz_t1020 .formWrapper .MuiGrid-item.state, .spz_t1020 .formWrapper .showComment, .spz_t1020 .formWrapper .privacyPolicy, .spz_t1020 .formWrapper .submitWrapper"
+            `.spz_t1020 .formWrapper .MuiGrid-item.multiple_region_select__c,
+            .spz_t1020 .formWrapper .MuiGrid-item.fleet_size,
+            .spz_t1020 .formWrapper .MuiGrid-item.country,
+            .spz_t1020 .formWrapper .MuiGrid-item.city,
+            .spz_t1020 .formWrapper .MuiGrid-item.state,
+            .spz_t1020 .formWrapper .showComment,
+            .spz_t1020 .formWrapper .privacyPolicy,
+            .spz_t1020 .formWrapper .MuiGrid-item.phone,
+            .How_Did_You_Hear_About_Geotab__select,
+            .spz_t1020 .formWrapper .submitWrapper
+            `
           )
           .forEach(function (step2Field) {
             step2Field.classList.add("step2Field");
@@ -325,21 +254,21 @@
           return pattern.test(email);
         }
 
-        // Change Tab index
         const fields = [
           "#first_name",
           "#last_name",
+          "#company",
           "#Title__c",
           "#email",
+          "#industry",
+          ".MuiInputBase-root > div#Sub_Industry__c",
+          "#fleet_size",
+          "#country",
+          "#state",
+          "#city",
           "#phone",
           "#How_Did_You_Hear_About_Geotab__select",
           "#multiple_region_select__c",
-          "#company",
-          "#industry",
-          "#fleet_size",
-          "#country",
-          "#city",
-          "#state",
         ];
 
         fields.forEach((field, index) => {
@@ -391,9 +320,9 @@
                 document.querySelector(
                   ".spz_t1020 .formWrapper .steps"
                 ).innerHTML = `
-					        <div class="step"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none"><circle cx="4" cy="4" r="4" fill="#00AEFF"></circle></svg></div>
-					        <div class="step active"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none"><circle cx="4" cy="4" r="4" fill="#00AEFF"></circle></svg></div>
-					        `;
+                <div class="step"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none"><circle cx="4" cy="4" r="4" fill="#00AEFF"></circle></svg></div>
+                <div class="step active"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none"><circle cx="4" cy="4" r="4" fill="#00AEFF"></circle></svg></div>
+                `;
               } else {
                 emailInput
                   .closest(".form-field")
@@ -403,7 +332,10 @@
               // Focus on the first empty field
               if (emptyFields.length > 0) {
                 if (
-                  emptyFields[0] == document.querySelector("#Title__c + input")
+                  emptyFields[0] ==
+                    document.querySelector("#Title__c + input") ||
+                  emptyFields[0].closest(".industry") ||
+                  emptyFields[0].closest(".subIndustry")
                 ) {
                   emptyFields[0]
                     .closest(".MuiGrid-root")
@@ -507,7 +439,7 @@
               document
                 .querySelector(".MuiInputBase-root #Sub_Industry__c")
                 ?.closest(".MuiGrid-root")
-                .classList.add("subIndustry", "form-field", "step2Field");
+                .classList.add("subIndustry", "form-field", "step1Field");
               step2Visible();
             });
           });
@@ -554,8 +486,13 @@
                   document.querySelector("label#state-input-label"),
                   mutation.target.textContent
                 );
-                document.querySelector(".spz_t1020 #state").tabIndex = "12";
-
+                // Updating Tab Index
+                fields.forEach((field, index) => {
+                  const element = document.querySelector(".spz_t1020 " + field);
+                  if (element) {
+                    element.tabIndex = index + 1;
+                  }
+                });
                 if (
                   document.querySelector(
                     ".spz_t1020 .formWrapper .MuiGrid-container.step1Filled"
@@ -571,22 +508,15 @@
                     ).style.display = "block";
                     document.querySelector(
                       ".spz_t1020 .formWrapper form .form-field.city"
-                    ).style.maxWidth = "calc(100%)";
-                    document.querySelector(
-                      ".spz_t1020 .formWrapper form .form-field.city"
-                    ).style.flexBasis = "calc(100%)";
-                    document.querySelector(
-                      ".spz_t1020 .formWrapper form .form-field.country"
                     ).style.maxWidth = "calc(50% - 10px)";
                     document.querySelector(
-                      ".spz_t1020 .formWrapper form .form-field.country"
+                      ".spz_t1020 .formWrapper form .form-field.city"
                     ).style.flexBasis = "calc(50% - 10px)";
-                  } else {
                     document.querySelector(
-                      ".spz_t1020 .formWrapper form .form-field.city"
+                      ".spz_t1020 .formWrapper form .form-field.country"
                     ).style.maxWidth = "calc(50% - 10px)";
                     document.querySelector(
-                      ".spz_t1020 .formWrapper form .form-field.city"
+                      ".spz_t1020 .formWrapper form .form-field.country"
                     ).style.flexBasis = "calc(50% - 10px)";
                   }
                 }
@@ -608,10 +538,10 @@
                     ).style.display = "block";
                     document.querySelector(
                       ".spz_t1020 .formWrapper form .form-field.city"
-                    ).style.maxWidth = "calc(50% - 10px)";
+                    ).style.maxWidth = "calc(100%)";
                     document.querySelector(
                       ".spz_t1020 .formWrapper form .form-field.city"
-                    ).style.flexBasis = "calc(50% - 10px)";
+                    ).style.flexBasis = "calc(100%)";
                     document.querySelector(
                       ".spz_t1020 .formWrapper form .form-field.country"
                     ).style.maxWidth = "calc(50% - 10px)";
@@ -681,7 +611,6 @@
               handleDesktopSelectClasses(
                 fieldWrapper.querySelectorAll('div[aria-haspopup="listbox"]')
               );
-              document.querySelector(".spz_t1020 #state").tabIndex = "12";
               document
                 .querySelector(".MuiInputBase-root #state")
                 .closest(".MuiGrid-root")
@@ -697,7 +626,6 @@
               handleDesktopSelectClasses(
                 fieldWrapper.querySelectorAll('div[aria-haspopup="listbox"]')
               );
-              document.querySelector(".spz_t1020 #state").tabIndex = "12";
               document
                 .querySelector(".MuiInputBase-root #state")
                 .closest(".MuiGrid-root")
@@ -730,13 +658,17 @@
                     "form-field",
                     "subIndustry",
                     "selectFieldActual",
-                    "step2Field"
+                    "step1Field"
                   );
                 step2Visible();
 
-                document.querySelector(
-                  ".MuiInputBase-root #Sub_Industry__c"
-                ).tabIndex = "10";
+                // Updating Tab Index
+                fields.forEach((field, index) => {
+                  const element = document.querySelector(".spz_t1020 " + field);
+                  if (element) {
+                    element.tabIndex = index + 1;
+                  }
+                });
 
                 document
                   .querySelector("label#Sub_Industry__c-input-label")
@@ -774,16 +706,6 @@
                     document.querySelectorAll("form .form-field.state").length >
                     0
                   ) {
-                    document.querySelector(
-                      ".spz_t1020 .formWrapper form .form-field.city"
-                    ).style.maxWidth = "calc(100%)";
-                    document.querySelector(
-                      ".spz_t1020 .formWrapper form .form-field.city"
-                    ).style.flexBasis = "calc(100%)";
-                  } else if (styleCity.display != "none") {
-                    document.querySelector(
-                      "form .form-field.city"
-                    ).style.maxWidth = "calc(50% - 10px)";
                   } else {
                     document.querySelector(
                       "form .form-field.country"
@@ -1061,7 +983,6 @@
                       "selectFieldActual",
                       "step2Field"
                     );
-                  document.querySelector(".spz_t1020 #state").tabIndex = "12";
                   if (
                     document.querySelector(
                       ".spz_t1020 .formWrapper .MuiGrid-container.step1Filled"
@@ -1073,26 +994,10 @@
                       )
                     ) {
                       document.querySelector(
-                        ".spz_t1020 .formWrapper form .form-field.city"
-                      ).style.display = "block";
-                      document.querySelector(
-                        ".spz_t1020 .formWrapper form .form-field.city"
-                      ).style.maxWidth = "calc(100%)";
-                      document.querySelector(
-                        ".spz_t1020 .formWrapper form .form-field.city"
-                      ).style.flexBasis = "calc(100%)";
-                      document.querySelector(
                         ".spz_t1020 .formWrapper form .form-field.country"
                       ).style.maxWidth = "calc(50% - 10px)";
                       document.querySelector(
                         ".spz_t1020 .formWrapper form .form-field.country"
-                      ).style.flexBasis = "calc(50% - 10px)";
-                    } else {
-                      document.querySelector(
-                        ".spz_t1020 .formWrapper form .form-field.city"
-                      ).style.maxWidth = "calc(50% - 10px)";
-                      document.querySelector(
-                        ".spz_t1020 .formWrapper form .form-field.city"
                       ).style.flexBasis = "calc(50% - 10px)";
                     }
                   }
@@ -1123,7 +1028,6 @@
                       "selectFieldActual",
                       "step2Field"
                     );
-                  document.querySelector(".spz_t1020 #state").tabIndex = "12";
                   if (
                     document.querySelector(
                       ".spz_t1020 .formWrapper .MuiGrid-container.step1Filled"
@@ -1135,26 +1039,10 @@
                       )
                     ) {
                       document.querySelector(
-                        ".spz_t1020 .formWrapper form .form-field.city"
-                      ).style.display = "block";
-                      document.querySelector(
-                        ".spz_t1020 .formWrapper form .form-field.city"
-                      ).style.maxWidth = "calc(100%)";
-                      document.querySelector(
-                        ".spz_t1020 .formWrapper form .form-field.city"
-                      ).style.flexBasis = "calc(100%)";
-                      document.querySelector(
                         ".spz_t1020 .formWrapper form .form-field.country"
                       ).style.maxWidth = "calc(50% - 10px)";
                       document.querySelector(
                         ".spz_t1020 .formWrapper form .form-field.country"
-                      ).style.flexBasis = "calc(50% - 10px)";
-                    } else {
-                      document.querySelector(
-                        ".spz_t1020 .formWrapper form .form-field.city"
-                      ).style.maxWidth = "calc(50% - 10px)";
-                      document.querySelector(
-                        ".spz_t1020 .formWrapper form .form-field.city"
                       ).style.flexBasis = "calc(50% - 10px)";
                     }
                   }
@@ -1176,33 +1064,11 @@
                     ".spz_t1020 .formWrapper form .form-field.city"
                   ).style.display = "block";
                   document.querySelector(
-                    ".spz_t1020 .formWrapper form .form-field.city"
-                  ).style.maxWidth = "calc(50% - 10px)";
-                  document.querySelector(
-                    ".spz_t1020 .formWrapper form .form-field.city"
-                  ).style.flexBasis = "calc(50% - 10px)";
-                  document.querySelector(
                     ".spz_t1020 .formWrapper form .form-field.country"
                   ).style.maxWidth = "calc(50% - 10px)";
                   document.querySelector(
                     ".spz_t1020 .formWrapper form .form-field.country"
                   ).style.flexBasis = "calc(50% - 10px)";
-                } else {
-                  if (
-                    document.querySelector(
-                      ".spz_t1020 .formWrapper .MuiGrid-container.step1Filled"
-                    )
-                  ) {
-                    document.querySelector(
-                      ".spz_t1020 .formWrapper form .form-field.city"
-                    ).style.display = "block";
-                    document.querySelector(
-                      ".spz_t1020 .formWrapper form .form-field.city"
-                    ).style.maxWidth = "calc(100%)";
-                    document.querySelector(
-                      ".spz_t1020 .formWrapper form .form-field.city"
-                    ).style.flexBasis = "calc(100%)";
-                  }
                 }
               }
             }
@@ -1255,7 +1121,7 @@
             elements.parentElement.parentElement.classList.add(
               "form-field__wrapper1"
             );
-            elements.querySelector("option:first-child").innerHTML = "";
+            // elements.querySelector("option:first-child").innerHTML = "";
             fieldsStatesLogic(elements);
             step2Visible();
           }, 200);
@@ -1278,7 +1144,7 @@
                   fieldsStatesLogic(industrySelectTablet);
                   industrySelectTablet
                     .closest(".MuiGrid-root")
-                    .classList.add("subIndustry", "form-field", "step2Field");
+                    .classList.add("subIndustry", "form-field", "step1Field");
                   step2Visible();
 
                   document
@@ -1309,16 +1175,6 @@
                       document.querySelectorAll("form .form-field.state")
                         .length > 0
                     ) {
-                      document.querySelector(
-                        ".spz_t1020 .formWrapper form .form-field.city"
-                      ).style.maxWidth = "calc(100%)";
-                      document.querySelector(
-                        ".spz_t1020 .formWrapper form .form-field.city"
-                      ).style.flexBasis = "calc(100%)";
-                    } else if (styleCity.display != "none") {
-                      document.querySelector(
-                        "form .form-field.city"
-                      ).style.maxWidth = "calc(50% - 10px)";
                     } else {
                       document.querySelector(
                         "form .form-field.country"
@@ -1364,13 +1220,13 @@
             const checkboxes = Array.from(options)
               .map(
                 (option) => `
-							<li>
-								<label class="regionDropdownLabels">
-									<input type="checkbox" value="${option.value}" name="city" />
-									<p>${option.text}</p>
-								</label>
-							</li>
-						`
+            <li>
+              <label class="regionDropdownLabels">
+                <input type="checkbox" value="${option.value}" name="city" />
+                <p>${option.text}</p>
+              </label>
+            </li>
+          `
               )
               .join("");
 
@@ -1386,15 +1242,15 @@
                 .insertAdjacentHTML(
                   "afterend",
                   `
-							<div class="activated form-field__wrapper1">
-								<div class="checkbox-dropdown">
-									<input class="optionsSelected">
-									<ul class="checkbox-dropdown-list">
-										${checkboxes}
-									</ul>
-								</div>
-							</div>
-						`
+            <div class="activated form-field__wrapper1">
+              <div class="checkbox-dropdown">
+                <input class="optionsSelected">
+                <ul class="checkbox-dropdown-list">
+                  ${checkboxes}
+                </ul>
+              </div>
+            </div>
+          `
                 );
             }
 
@@ -1518,8 +1374,6 @@
               if (emptyFields.length > 0) {
                 if (
                   emptyFields[0].closest(".company") ||
-                  emptyFields[0].closest(".industry") ||
-                  emptyFields[0].closest(".subIndustry") ||
                   emptyFields[0].closest(".fleet_size") ||
                   emptyFields[0].closest(".country") ||
                   emptyFields[0].closest(".city") ||
@@ -1550,8 +1404,10 @@
                   'ul[aria-labelledby="multiple_region_select__c-input-label"]'
                 )
               ) {
+                console.log(event.target);
                 inputsToCheck.forEach(function (input) {
                   if (input.value.trim() === "") {
+                    console.log("Hola");
                     input
                       .closest(".MuiGrid-root")
                       .classList.remove("active", "typing", "error");
@@ -1605,6 +1461,99 @@
             }
           });
         }
+
+        // Downfunnel Main Code
+        function spiralyze_conversion_tag() {
+          var checkHiddenField = setInterval(function () {
+            var hiddenField = document.querySelector("input#AB_name__c");
+            if (hiddenField) {
+              clearInterval(checkHiddenField);
+              var conversionTag = getCookie("spiralyze_conversion_tag_demo");
+              console.log(conversionTag);
+              if (conversionTag) {
+                const nativeInputValueSetter = Object.getOwnPropertyDescriptor(
+                  window.HTMLInputElement.prototype,
+                  "value"
+                ).set;
+                nativeInputValueSetter.call(hiddenField, conversionTag);
+                const event = new Event("input", { bubbles: true });
+                hiddenField.dispatchEvent(event);
+              }
+            }
+          }, 100);
+        }
+        function setCookie(name, value, days) {
+          var expires = "";
+          if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+            expires = "; expires=" + date.toUTCString();
+          }
+          document.cookie = name + "=" + (value || "") + expires + "; path=/";
+        }
+        function getCookie(name) {
+          var nameEQ = name + "=";
+          var ca = document.cookie.split(";");
+          for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == " ") c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) == 0)
+              return c.substring(nameEQ.length, c.length);
+          }
+          return null;
+        }
+        function hiddenValue(cookieName, newValue) {
+          var spzConversionTag = getCookie(cookieName);
+          var testPattern = /\d{4}/;
+
+          if (!spzConversionTag) {
+            setCookie(cookieName, newValue, 1);
+          } else {
+            var newTestNumberMatch = newValue.match(testPattern);
+            if (newTestNumberMatch) {
+              var newTestNumber = newTestNumberMatch[0];
+              if (!spzConversionTag.includes(newValue)) {
+                var oldTestValue = spzConversionTag
+                  .split(",")
+                  .find(function (tag) {
+                    return tag.includes(newTestNumber);
+                  });
+
+                if (oldTestValue) {
+                  var updatedValue = spzConversionTag.replace(
+                    oldTestValue,
+                    newValue
+                  );
+                  setCookie(cookieName, updatedValue, 1);
+
+                  if (window.mutiny && window.mutiny.client) {
+                    window.mutiny.client.trackConversion({
+                      name:
+                        newTestNumber +
+                        "_duplicate : " +
+                        newValue +
+                        "-" +
+                        oldTestValue,
+                    });
+                  }
+                  console.log(
+                    "Duplicate test #" +
+                      newTestNumber +
+                      " detected. Updated value."
+                  );
+                } else {
+                  setCookie(cookieName, spzConversionTag + "," + newValue, 1);
+                }
+              } else {
+                console.log(
+                  "The value " + newValue + " already exists. No action taken."
+                );
+              }
+            }
+          }
+        }
+        hiddenValue("spiralyze_conversion_tag_demo", "1020_V1");
+        spiralyze_conversion_tag();
       }
 
       // Privacy Policy Checkbox
