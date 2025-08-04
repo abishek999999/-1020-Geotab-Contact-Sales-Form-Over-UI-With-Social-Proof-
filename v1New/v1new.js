@@ -1590,6 +1590,22 @@
           ".spz_t1020 .formWrapper .MuiGrid-root.How_Did_You_Hear_About_Geotab__select label"
         )
         ?.classList.add("css-1mca1sr", "css-3i3knw");
+
+      // #1020 Code
+      document
+        .querySelector(".spz_t1020 .formWrapper .formcontainer")
+        .insertAdjacentHTML(
+          "afterend",
+          `
+                <div class="rating">
+                    <img src="//res.cloudinary.com/spiralyze/image/upload/f_auto/geotab/1020/01_label_1.webp" alt="G2 Winter Winner label">
+                    <img src="//res.cloudinary.com/spiralyze/image/upload/f_auto/geotab/1020/02_label_1.webp" alt="Capterra label">
+                    <img src="//res.cloudinary.com/spiralyze/image/upload/f_auto/geotab/1020/03_label_1.webp" alt="ABI research label">
+                    <img src="//res.cloudinary.com/spiralyze/image/upload/f_auto/geotab/1020/04_label_1.webp" alt="Get app label">
+                    <img src="//res.cloudinary.com/spiralyze/image/upload/f_auto/geotab/1020/05_label_1.webp" alt="Software advice label">
+                </div>
+            `
+        );
     }, 1000);
   }
 })();

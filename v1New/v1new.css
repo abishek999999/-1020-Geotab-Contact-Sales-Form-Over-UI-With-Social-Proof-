@@ -98,7 +98,7 @@
   width: 100%;
   max-width: 624px;
   margin: auto;
-  padding: 64px 36px 40px;
+  padding: 60px 36px 24px;
   height: 100%;
   position: relative;
 }
@@ -119,7 +119,7 @@
   font-style: normal;
   font-weight: 700;
   line-height: 120%;
-  margin-bottom: 24px;
+  margin-bottom: 32px;
 }
 
 .spz_t1020 .formWrapper .formPara {
@@ -708,7 +708,7 @@ select:-webkit-autofill:active {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 25px;
+  margin-bottom: 22px;
   padding-top: 5px;
 }
 
@@ -749,7 +749,7 @@ select:-webkit-autofill:active {
   flex-basis: 100%;
   transition: transform 5s;
   transform: scaleY(1);
-  margin: 12px auto 0 !important;
+  margin: 3px auto 0 !important;
 }
 
 .spz_t1020 .formWrapper .continue svg {
@@ -1091,7 +1091,7 @@ select:-webkit-autofill:active {
 
   .spz_t1020 .formWrapper {
     margin: 70px auto;
-    padding: 64px 24px 30px;
+    padding: 62px 24px 24px;
   }
 
   .spz_t1020
@@ -1113,7 +1113,7 @@ select:-webkit-autofill:active {
   }
 
   .spz_t1020 .formWrapper .steps {
-    margin-bottom: 14px;
+    margin-bottom: 21px;
   }
 
   .spz_t1020
@@ -1121,13 +1121,6 @@ select:-webkit-autofill:active {
     .MuiGridLegacy-root[data-testid="customFormBackground"] {
     padding: 0 16px;
     justify-content: center;
-  }
-
-  .spz_t1020 .formWrapper h2 {
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 140%;
   }
 
   .spz_t1020 .formWrapper form .form-field,
@@ -1281,3 +1274,64 @@ select:-webkit-autofill:active {
   .MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation6.MuiSnackbarContent-root {
   background-color: rgb(254, 90, 63) !important;
 }
+
+/* test 1020 start */
+.spz_t1020 .formWrapper .rating {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  width: 100%;
+  gap: 40px;
+  margin: 30px 0 0;
+  padding-top: 24px !important;
+  align-items: center;
+  border-top: 1px solid #eff2f7;
+}
+.spz_t1020 .formWrapper .rating img {
+  height: auto;
+}
+.spz_t1020 .formWrapper .rating img[alt="G2 Winter Winner label"] {
+  max-width: 58px;
+}
+.spz_t1020 .formWrapper .rating img[alt="Get app label"],
+.spz_t1020 .formWrapper .rating img[alt="Capterra label"] {
+  max-width: 82px;
+}
+.spz_t1020 .formWrapper .rating img[alt="ABI research label"] {
+  max-width: 64px;
+}
+.spz_t1020 .formWrapper .rating img[alt="Software advice label"] {
+  max-width: 61px;
+}
+
+@media (max-width: 767px) {
+  .spz_t1020 .formWrapper .rating {
+    border-top: none;
+    flex-wrap: wrap;
+    gap: 12px 32px !important;
+    padding: 0 !important;
+  }
+  .spz_t1020 .formWrapper .rating img[alt="G2 Winter Winner label"] {
+    max-width: 55px;
+  }
+  .spz_t1020 .formWrapper .rating img[alt="Get app label"],
+  .spz_t1020 .formWrapper .rating img[alt="Capterra label"] {
+    max-width: 78px;
+  }
+  .spz_t1020 .formWrapper .rating img[alt="ABI research label"] {
+    max-width: 61px;
+  }
+  .spz_t1020 .formWrapper .rating img[alt="Software advice label"] {
+    max-width: 58px;
+  }
+}
+
+@media (max-width: 520px) {
+  .spz_t1020 .formWrapper .rating {
+    max-width: 350px;
+    width: 100%;
+    margin: 24px auto 0px auto;
+  }
+}
+
+/* test 1020 end */
