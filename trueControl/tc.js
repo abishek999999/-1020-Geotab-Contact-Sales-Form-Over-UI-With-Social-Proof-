@@ -196,7 +196,7 @@
               return; // Skip if the ID is empty
             }
             element
-              .closest(".MuiGridLegacy-item")
+              .closest(".MuiGrid-root")
               .classList.add(element.id, "form-field");
           });
 
@@ -244,7 +244,7 @@
         document.querySelector(".phone").insertAdjacentHTML(
           "afterend",
           `
-            <div class="MuiGridLegacy-item MuiGrid-grid-sm-12 MuiGrid-grid-md-6 MuiGrid-grid-lg-12 css-1m090re How_Did_You_Hear_About_Geotab__select form-field">
+            <div class="MuiGrid-root MuiGrid-grid-sm-12 MuiGrid-grid-md-6 MuiGrid-grid-lg-12 css-1m090re How_Did_You_Hear_About_Geotab__select form-field">
             <div class="MuiFormControl-root MuiFormControl-fullWidth css-1bgh9rs">
             <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary Mui-required MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-6zglxn" data-shrink="false" for="How_Did_You_Hear_About_Geotab__select">How did you hear about us?</label>
               <div required class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-gw8dj3">
@@ -315,12 +315,12 @@
         // Adding step 1 classes
         document
           .querySelectorAll(
-            `.spz_t1019 .formWrapper .MuiGridLegacy-item.first_name,
-                .spz_t1019 .formWrapper .MuiGridLegacy-item.last_name,
-                .spz_t1019 .formWrapper .MuiGridLegacy-item.company,
-                .spz_t1019 .formWrapper .MuiGridLegacy-item.Title__c,
-                .spz_t1019 .formWrapper .MuiGridLegacy-item.email,
-                .spz_t1019 .formWrapper .MuiGridLegacy-item.industry,
+            `.spz_t1019 .formWrapper .MuiGrid-root.first_name,
+                .spz_t1019 .formWrapper .MuiGrid-root.last_name,
+                .spz_t1019 .formWrapper .MuiGrid-root.company,
+                .spz_t1019 .formWrapper .MuiGrid-root.Title__c,
+                .spz_t1019 .formWrapper .MuiGrid-root.email,
+                .spz_t1019 .formWrapper .MuiGrid-root.industry,
                 .spz_t1019 .formWrapper .continue`
           )
           .forEach(function (step1Field) {
@@ -330,14 +330,14 @@
         // Adding step 2 classes
         document
           .querySelectorAll(
-            `.spz_t1019 .formWrapper .MuiGridLegacy-item.multiple_region_select__c,
-                  .spz_t1019 .formWrapper .MuiGridLegacy-item.fleet_size,
-                  .spz_t1019 .formWrapper .MuiGridLegacy-item.country,
-                  .spz_t1019 .formWrapper .MuiGridLegacy-item.city,
-                  .spz_t1019 .formWrapper .MuiGridLegacy-item.state,
+            `.spz_t1019 .formWrapper .MuiGrid-root.multiple_region_select__c,
+                  .spz_t1019 .formWrapper .MuiGrid-root.fleet_size,
+                  .spz_t1019 .formWrapper .MuiGrid-root.country,
+                  .spz_t1019 .formWrapper .MuiGrid-root.city,
+                  .spz_t1019 .formWrapper .MuiGrid-root.state,
                   .spz_t1019 .formWrapper .showComment,
                   .spz_t1019 .formWrapper .privacyPolicy,
-                  .spz_t1019 .formWrapper .MuiGridLegacy-item.phone,
+                  .spz_t1019 .formWrapper .MuiGrid-root.phone,
                   .How_Did_You_Hear_About_Geotab__select,
                   .spz_t1019 .formWrapper .submitWrapper
                   `
@@ -403,7 +403,7 @@
             });
             if (allFieldsFilled === checkfields.length) {
               var emailInput = document.querySelector(
-                ".spz_t1019 .formWrapper .MuiGridLegacy-item.email input"
+                ".spz_t1019 .formWrapper .MuiGrid-root.email input"
               );
               var email = emailInput.value.trim();
               if (isValidEmail(email)) {
@@ -413,7 +413,7 @@
                     step1Field.style.display = "none";
                   });
                 document
-                  .querySelector(".spz_t1019 .formWrapper .MuiGridLegacy-item")
+                  .querySelector(".spz_t1019 .formWrapper .MuiGrid-root")
                   .classList.add("step1Filled");
                 step2Visible();
 
@@ -438,7 +438,7 @@
                   emptyFields[0].closest(".subIndustry")
                 ) {
                   emptyFields[0]
-                    .closest(".MuiGridLegacy-item")
+                    .closest(".MuiGrid-root")
                     .classList.add("active", "typing");
                 }
                 emptyFields[0].focus();
@@ -451,7 +451,7 @@
         function step2Visible() {
           if (
             document.querySelector(
-              ".spz_t1019 .formWrapper .MuiGridLegacy-item.step1Filled"
+              ".spz_t1019 .formWrapper .MuiGrid-root.step1Filled"
             )
           ) {
             document
@@ -468,7 +468,7 @@
             if (
               tabletCountryValue?.value !== "" &&
               document.querySelector(
-                ".spz_t1019 .formWrapper .MuiGridLegacy-item.step1Filled"
+                ".spz_t1019 .formWrapper .MuiGrid-root.step1Filled"
               ) &&
               window.innerWidth < 960
             ) {
@@ -483,7 +483,7 @@
             if (
               !desktopCountryValue.querySelector("span") &&
               document.querySelector(
-                ".spz_t1019 .formWrapper .MuiGridLegacy-item.step1Filled"
+                ".spz_t1019 .formWrapper .MuiGrid-root.step1Filled"
               ) &&
               window.innerWidth >= 960
             ) {
@@ -512,7 +512,7 @@
             selectFields.forEach((selectField) => {
               selectField.querySelector("span").innerHTML = "";
               selectField.addEventListener("click", function () {
-                var formField = selectField.closest(".MuiGridLegacy-item");
+                var formField = selectField.closest(".MuiGrid-root");
                 var isExpanded = selectField.getAttribute("aria-expanded");
                 if (isExpanded) {
                   formField.classList.add("active", "typing");
@@ -530,15 +530,15 @@
               callback(mutation);
               document
                 .querySelector(".MuiInputBase-root #Title")
-                ?.closest(".MuiGridLegacy-item")
+                ?.closest(".MuiGrid-root")
                 .classList.add("Title");
               document
                 .querySelector(".MuiInputBase-root #state")
-                ?.closest(".MuiGridLegacy-item")
+                ?.closest(".MuiGrid-root")
                 .classList.add("state");
               document
                 .querySelector(".MuiInputBase-root #Sub_Industry__c")
-                ?.closest(".MuiGridLegacy-item")
+                ?.closest(".MuiGrid-root")
                 .classList.add("subIndustry", "form-field", "step1Field");
               step2Visible();
             });
@@ -577,7 +577,7 @@
               ) {
                 document
                   .querySelector(".MuiInputBase-root #state")
-                  .closest(".MuiGridLegacy-item")
+                  .closest(".MuiGrid-root")
                   .classList.add("form-field", "state", "selectFieldActual");
 
                 countrySubFieldCorrection(
@@ -593,12 +593,12 @@
                 });
                 if (
                   document.querySelector(
-                    ".spz_t1019 .formWrapper .MuiGridLegacy-item.step1Filled"
+                    ".spz_t1019 .formWrapper .MuiGrid-root.step1Filled"
                   )
                 ) {
                   if (
                     document.querySelector(
-                      ".spz_t1019 .formWrapper .MuiGridLegacy-item.subIndustry"
+                      ".spz_t1019 .formWrapper .MuiGrid-root.subIndustry"
                     )
                   ) {
                     document.querySelector(
@@ -623,12 +623,12 @@
               } else {
                 if (
                   document.querySelector(
-                    ".spz_t1019 .formWrapper .MuiGridLegacy-item.step1Filled"
+                    ".spz_t1019 .formWrapper .MuiGrid-root.step1Filled"
                   )
                 ) {
                   if (
                     document.querySelector(
-                      ".spz_t1019 .formWrapper .MuiGridLegacy-item.subIndustry"
+                      ".spz_t1019 .formWrapper .MuiGrid-root.subIndustry"
                     )
                   ) {
                     document.querySelector(
@@ -649,7 +649,7 @@
                   } else {
                     if (
                       document.querySelector(
-                        ".spz_t1019 .formWrapper .MuiGridLegacy-item.step1Filled"
+                        ".spz_t1019 .formWrapper .MuiGrid-root.step1Filled"
                       )
                     ) {
                       document.querySelector(
@@ -678,7 +678,7 @@
             var fieldWrapper = targetElement.parentElement.parentElement;
             document
               .querySelector(".MuiInputBase-root #state")
-              .closest(".MuiGridLegacy-item")
+              .closest(".MuiGrid-root")
               .classList.add(
                 "form-field",
                 "state",
@@ -711,7 +711,7 @@
               );
               document
                 .querySelector(".MuiInputBase-root #state")
-                .closest(".MuiGridLegacy-item")
+                .closest(".MuiGrid-root")
                 .classList.add(
                   "form-field",
                   "state",
@@ -726,7 +726,7 @@
               );
               document
                 .querySelector(".MuiInputBase-root #state")
-                .closest(".MuiGridLegacy-item")
+                .closest(".MuiGrid-root")
                 .classList.add(
                   "form-field",
                   "state",
@@ -751,7 +751,7 @@
               function (mutation) {
                 document
                   .querySelector(".MuiInputBase-root #Sub_Industry__c")
-                  .closest(".MuiGridLegacy-item")
+                  .closest(".MuiGrid-root")
                   .classList.add(
                     "form-field",
                     "subIndustry",
@@ -797,7 +797,7 @@
 
                 if (
                   document.querySelector(
-                    ".spz_t1019 .formWrapper .MuiGridLegacy-item.step1Filled"
+                    ".spz_t1019 .formWrapper .MuiGrid-root.step1Filled"
                   )
                 ) {
                   if (
@@ -827,9 +827,8 @@
                 document
                   .querySelector(".form-field.subIndustry")
                   .addEventListener("click", function () {
-                    var formField = selectFieldIndustry.closest(
-                      ".MuiGridLegacy-item"
-                    );
+                    var formField =
+                      selectFieldIndustry.closest(".MuiGrid-root");
                     var isExpanded =
                       selectFieldIndustry.getAttribute("aria-expanded");
                     if (isExpanded) {
@@ -844,7 +843,7 @@
 
         // After new control changes check for fields parent Element for any removal or new injection
         observeElementChanges(
-          ".spz_t1019 .formWrapper .MuiGridLegacy-item",
+          ".spz_t1019 .formWrapper .MuiGrid-root",
           "childList",
           function (mutation) {
             if (
@@ -857,19 +856,19 @@
                 .querySelector(
                   "form .MuiInputBase-root .MuiInputBase-input#industry"
                 )
-                .closest(".MuiGridLegacy-item")
+                .closest(".MuiGrid-root")
                 .classList.add("industry", "form-field");
               document.querySelector(
                 "form .form-field.industry label"
               ).innerText = "Industry";
               fieldsStatesLogic(
                 document.querySelector(
-                  ".formWrapper .MuiGridLegacy-item div#industry"
+                  ".formWrapper .MuiGrid-root div#industry"
                 )
               );
               handleDesktopSelectClasses(
                 document.querySelectorAll(
-                  ".formWrapper .MuiGridLegacy-item div#industry"
+                  ".formWrapper .MuiGrid-root div#industry"
                 )
               );
 
@@ -884,14 +883,14 @@
             ) {
               document
                 .querySelector("form .MuiInputBase-root select#industry")
-                .closest(".MuiGridLegacy-item")
+                .closest(".MuiGrid-root")
                 .classList.add("industry", "form-field");
               document.querySelector(
                 "form .form-field.industry label"
               ).innerText = "Industry";
               fieldsStatesLogic(
                 document.querySelector(
-                  ".formWrapper .MuiGridLegacy-item select#industry"
+                  ".formWrapper .MuiGrid-root select#industry"
                 )
               );
               initialIndustryTabletOnChange();
@@ -915,7 +914,7 @@
                     clearInterval(titleInterval);
                     document
                       .querySelector(".MuiInputBase-root #Title")
-                      .closest(".MuiGridLegacy-item").style.display = "none";
+                      .closest(".MuiGrid-root").style.display = "none";
                     var elm = document.querySelector("#Title");
                     const capitalizeAndDispatch = function (e) {
                       // Remove the event listener to prevent infinite loop
@@ -969,8 +968,8 @@
           });
 
         function fieldsStatesLogic(element) {
-          // var inputWrapper = element.closest('.MuiGridLegacy-item')
-          var inputWrapper = element.closest(".MuiGridLegacy-item");
+          // var inputWrapper = element.closest('.MuiGrid-root')
+          var inputWrapper = element.closest(".MuiGrid-root");
 
           // Add click event listener
           element.addEventListener("focus", function () {
@@ -995,7 +994,7 @@
               if (element.id == "country" && element.value.trim() !== "") {
                 document
                   .querySelector(".submitWrapper")
-                  .closest(".MuiGridLegacy-item")
+                  .closest(".MuiGrid-root")
                   .classList.add("state");
               }
               inputWrapper.classList.add("active");
@@ -1033,11 +1032,11 @@
 
                   if (targetElement.getAttribute("aria-expanded") == "true") {
                     targetElement
-                      .closest(".MuiGridLegacy-item")
+                      .closest(".MuiGrid-root")
                       .classList.add("active", "typing");
                   } else {
                     targetElement
-                      .closest(".MuiGridLegacy-item")
+                      .closest(".MuiGrid-root")
                       .classList.remove("active", "typing");
                     targetElement.blur();
                   }
@@ -1075,7 +1074,7 @@
                   clearInterval(stateInterval);
                   document
                     .querySelector(".MuiInputBase-root #state")
-                    .closest(".MuiGridLegacy-item")
+                    .closest(".MuiGrid-root")
                     .classList.add(
                       "form-field",
                       "state",
@@ -1084,12 +1083,12 @@
                     );
                   if (
                     document.querySelector(
-                      ".spz_t1019 .formWrapper .MuiGridLegacy-item.step1Filled"
+                      ".spz_t1019 .formWrapper .MuiGrid-root.step1Filled"
                     )
                   ) {
                     if (
                       document.querySelector(
-                        ".spz_t1019 .formWrapper .MuiGridLegacy-item.subIndustry"
+                        ".spz_t1019 .formWrapper .MuiGrid-root.subIndustry"
                       )
                     ) {
                       document.querySelector(
@@ -1120,7 +1119,7 @@
                   clearInterval(stateInterval);
                   document
                     .querySelector(".MuiInputBase-root #state")
-                    .closest(".MuiGridLegacy-item")
+                    .closest(".MuiGrid-root")
                     .classList.add(
                       "form-field",
                       "state",
@@ -1129,12 +1128,12 @@
                     );
                   if (
                     document.querySelector(
-                      ".spz_t1019 .formWrapper .MuiGridLegacy-item.step1Filled"
+                      ".spz_t1019 .formWrapper .MuiGrid-root.step1Filled"
                     )
                   ) {
                     if (
                       document.querySelector(
-                        ".spz_t1019 .formWrapper .MuiGridLegacy-item.subIndustry"
+                        ".spz_t1019 .formWrapper .MuiGrid-root.subIndustry"
                       )
                     ) {
                       document.querySelector(
@@ -1151,12 +1150,12 @@
             } else {
               if (
                 document.querySelector(
-                  ".spz_t1019 .formWrapper .MuiGridLegacy-item.step1Filled"
+                  ".spz_t1019 .formWrapper .MuiGrid-root.step1Filled"
                 )
               ) {
                 if (
                   document.querySelector(
-                    ".spz_t1019 .formWrapper .MuiGridLegacy-item.subIndustry"
+                    ".spz_t1019 .formWrapper .MuiGrid-root.subIndustry"
                   )
                 ) {
                   document.querySelector(
@@ -1174,7 +1173,7 @@
 
             if (
               !document.querySelector(
-                ".spz_t1019 .formWrapper .MuiGridLegacy-item.step1Filled"
+                ".spz_t1019 .formWrapper .MuiGrid-root.step1Filled"
               )
             ) {
               var stateInterval3 = setInterval(function () {
@@ -1182,7 +1181,7 @@
                   clearInterval(stateInterval3);
                   document
                     .querySelector("#state")
-                    .closest(".MuiGridLegacy-item").style.display = "none";
+                    .closest(".MuiGrid-root").style.display = "none";
                 }
               });
               document.querySelector(
@@ -1209,7 +1208,7 @@
             label.innerHTML = title;
             document
               .querySelector(".MuiInputBase-root #state")
-              .closest(".MuiGridLegacy-item")
+              .closest(".MuiGrid-root")
               .classList.add(
                 "form-field",
                 "state",
@@ -1234,7 +1233,7 @@
                 if (
                   document
                     .querySelector("select#Sub_Industry__c")
-                    .closest(".MuiGridLegacy-item")
+                    .closest(".MuiGrid-root")
                 ) {
                   clearInterval(subIndustryInterval);
                   var industrySelectTablet = document.querySelector(
@@ -1242,21 +1241,21 @@
                   );
                   fieldsStatesLogic(industrySelectTablet);
                   industrySelectTablet
-                    .closest(".MuiGridLegacy-item")
+                    .closest(".MuiGrid-root")
                     .classList.add("subIndustry", "form-field", "step1Field");
                   step2Visible();
 
                   document
                     .querySelector(
-                      ".spz_t1019 .formWrapper .MuiGridLegacy-item.industry"
+                      ".spz_t1019 .formWrapper .MuiGrid-root.industry"
                     )
                     .after(
                       document.querySelector(
-                        ".spz_t1019 .formWrapper .MuiGridLegacy-item.subIndustry"
+                        ".spz_t1019 .formWrapper .MuiGrid-root.subIndustry"
                       )
                     );
                   industrySelectTablet
-                    .closest(".MuiGridLegacy-item")
+                    .closest(".MuiGrid-root")
                     .querySelector("label").textContent = "Sub-industry";
 
                   var styleCity = window.getComputedStyle(
@@ -1267,7 +1266,7 @@
 
                   if (
                     document.querySelector(
-                      ".spz_t1019 .formWrapper .MuiGridLegacy-item.step1Filled"
+                      ".spz_t1019 .formWrapper .MuiGrid-root.step1Filled"
                     )
                   ) {
                     if (
@@ -1364,10 +1363,7 @@
             checkboxDropdown.addEventListener("click", function (event) {
               if (!this.classList.contains("is-active")) {
                 this.classList.add("is-active");
-                this.closest(".MuiGridLegacy-item").classList.add(
-                  "active",
-                  "typing"
-                );
+                this.closest(".MuiGrid-root").classList.add("active", "typing");
               } else {
                 this.classList.remove("is-active");
               }
@@ -1392,11 +1388,11 @@
                     ).value !== ""
                   ) {
                     checkboxDropdown
-                      .closest(".MuiGridLegacy-item")
+                      .closest(".MuiGrid-root")
                       .classList.remove("typing");
                   } else {
                     checkboxDropdown
-                      .closest(".MuiGridLegacy-item")
+                      .closest(".MuiGrid-root")
                       .classList.remove("active", "typing");
                   }
                 }
@@ -1482,7 +1478,7 @@
                   (emptyFields[0].closest(".state") && window.outerWidth >= 960)
                 ) {
                   emptyFields[0]
-                    .closest(".MuiGridLegacy-item")
+                    .closest(".MuiGrid-root")
                     .classList.add("active", "typing");
                 }
                 emptyFields[0].focus();
@@ -1509,7 +1505,7 @@
                 inputsToCheck.forEach(function (input) {
                   if (input.value.trim() === "") {
                     input
-                      .closest(".MuiGridLegacy-item")
+                      .closest(".MuiGrid-root")
                       .classList.remove("active", "typing", "error");
                   }
                 });
@@ -1531,7 +1527,7 @@
                   clearInterval(waitForElement);
                   document
                     .querySelector("#Title")
-                    .closest(".MuiGridLegacy-item")
+                    .closest(".MuiGrid-root")
                     .classList.add("subTitleField");
                   var elm = document.querySelector("#Title");
                   const capitalizeAndDispatch = function (e) {
@@ -1555,7 +1551,7 @@
 
                   document
                     .querySelector(".MuiInputBase-root #Title")
-                    .closest(".MuiGridLegacy-item").style.display = "none";
+                    .closest(".MuiGrid-root").style.display = "none";
                 }
               });
             }
@@ -1591,7 +1587,7 @@
       // Test issue resolve
       document
         .querySelector(
-          ".spz_t1019 .formWrapper .MuiGridLegacy-item.How_Did_You_Hear_About_Geotab__select label"
+          ".spz_t1019 .formWrapper .MuiGrid-root.How_Did_You_Hear_About_Geotab__select label"
         )
         ?.classList.add("css-1mca1sr", "css-3i3knw");
     }, 1000);

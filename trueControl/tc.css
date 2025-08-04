@@ -4,7 +4,7 @@
 
 .spz_t1019
   .formWrapper
-  .MuiGridLegacy-item.How_Did_You_Hear_About_Geotab__select
+  .MuiGrid-root.How_Did_You_Hear_About_Geotab__select
   select {
   background: #fff;
   border-radius: 5px;
@@ -17,7 +17,7 @@
 
 .spz_t1019
   form
-  .MuiGridLegacy-item.How_Did_You_Hear_About_Geotab__select.active.typing
+  .MuiGrid-root.How_Did_You_Hear_About_Geotab__select.active.typing
   select {
   border: 1px solid #0078d3 !important;
   border-radius: 5px;
@@ -25,7 +25,7 @@
 
 .spz_t1019
   .formWrapper
-  .MuiGridLegacy-item.How_Did_You_Hear_About_Geotab__select:hover
+  .MuiGrid-root.How_Did_You_Hear_About_Geotab__select:hover
   select {
   border-color: var(--Accents-Accent-1, #0078d3) !important;
 }
@@ -56,6 +56,15 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  min-height: 100vh;
+}
+
+.spz_t1019 .formSection > div {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 36px);
 }
 
 .spz_t1019 .formSection .banner {
@@ -117,7 +126,7 @@
   display: none;
 }
 
-.spz_t1019 .formWrapper .MuiGridLegacy-container {
+.spz_t1019 .formWrapper .MuiGrid-container {
   -webkit-grid-gap: 20px;
   grid-gap: 20px;
 }
@@ -145,8 +154,7 @@
   animation: slideIn 0.3s ease forwards;
 }
 
-.spz_t1019 .formWrapper form .form-field,
-.spz_t1019 .formWrapper .MuiGridLegacy-item {
+.spz_t1019 .formWrapper form .form-field {
   padding: 0 !important;
   margin: 0 !important;
   max-width: calc(50% - 10px);
@@ -218,19 +226,15 @@
   outline: none;
 }
 
-.spz_t1019
-  form
-  .MuiGridLegacy-item.error.active.typing
-  .MuiInputBase-root
-  fieldset {
+.spz_t1019 form .MuiGrid-root.error.active.typing .MuiInputBase-root fieldset {
   border-color: #fe5a3f !important;
 }
 
-.spz_t1019 form .MuiGridLegacy-item.error.active.typing .MuiInputBase-root {
+.spz_t1019 form .MuiGrid-root.error.active.typing .MuiInputBase-root {
   background: rgba(254, 90, 63, 0.04) !important;
 }
 
-.spz_t1019 form .MuiGridLegacy-item.error.active.typing label {
+.spz_t1019 form .MuiGrid-root.error.active.typing label {
   color: #fe5a3f !important;
 }
 
@@ -262,18 +266,18 @@ select:-webkit-autofill:active {
 }
 
 .spz_t1019 .formWrapper fieldset span,
-.spz_t1019 .formWrapper .MuiGridLegacy-item fieldset span {
+.spz_t1019 .formWrapper .MuiGrid-root fieldset span {
   display: none;
 }
 
-.spz_t1019 form .MuiGridLegacy-item .MuiInputBase-root fieldset {
+.spz_t1019 form .MuiGrid-root .MuiInputBase-root fieldset {
   border-width: 1px;
   border-color: var(--Neutrals-N-3, #d1d6dd);
   /* height: 56px; */
   top: 0;
 }
 
-.spz_t1019 form .MuiGridLegacy-item .MuiInputBase-root fieldset legend {
+.spz_t1019 form .MuiGrid-root .MuiInputBase-root fieldset legend {
   display: none;
 }
 
@@ -324,29 +328,26 @@ select:-webkit-autofill:active {
   border-color: var(--Accents-Accent-1, #0078d3) !important;
 }
 
-.spz_t1019 form .MuiGridLegacy-item.active.typing .MuiInputBase-root fieldset {
+.spz_t1019 form .MuiGrid-root.active.typing .MuiInputBase-root fieldset {
   border-color: var(--Accents-Accent-1, #0078d3) !important;
 }
 
-.spz_t1019 form .MuiGridLegacy-item.typing .MuiInputBase-root fieldset:after {
+.spz_t1019 form .MuiGrid-root.typing .MuiInputBase-root fieldset:after {
   transform: translateY(-50%) rotate(180deg);
 }
 
-.spz_t1019 form .MuiGridLegacy-item.active .MuiInputBase-root fieldset {
+.spz_t1019 form .MuiGrid-root.active .MuiInputBase-root fieldset {
   border-color: var(--Neutrals-N-3, #d1d6dd);
 }
 
-.spz_t1019 form .MuiGridLegacy-item label.Mui-focused,
-.spz_t1019 form .MuiGridLegacy-item.active.typing label.MuiFormLabel-root {
+.spz_t1019 form .MuiGrid-root label.Mui-focused,
+.spz_t1019 form .MuiGrid-root.active.typing label.MuiFormLabel-root {
   color: var(--Accents-Accent-1, #0078d3);
   transform: translate(12px, -9px) scale(0.85) !important;
   padding: 0 5px;
 }
 
-.spz_t1019
-  form
-  .MuiGridLegacy-item.active.typing
-  label.MuiFormLabel-root:before {
+.spz_t1019 form .MuiGrid-root.active.typing label.MuiFormLabel-root:before {
   content: "";
   width: 100%;
   height: 8px;
@@ -639,7 +640,7 @@ select:-webkit-autofill:active {
   text-decoration-line: underline !important;
 }
 
-.spz_t1019 .formWrapper .privacyPolicy .MuiGridLegacy-item {
+.spz_t1019 .formWrapper .privacyPolicy .MuiGrid-root {
   max-width: 100%;
 }
 
@@ -1085,11 +1086,11 @@ select:-webkit-autofill:active {
     max-width: 230px;
   }
   .spz_t1019 .formSection {
-    padding: 18px 0;
+    padding: 18px 16px;
   }
 
   .spz_t1019 .formWrapper {
-    margin: 70px 0;
+    margin: 70px auto;
     padding: 64px 24px 30px;
   }
 
@@ -1130,19 +1131,19 @@ select:-webkit-autofill:active {
   }
 
   .spz_t1019 .formWrapper form .form-field,
-  .spz_t1019 .formWrapper .MuiGridLegacy-item,
+  .spz_t1019 .formWrapper .MuiGrid-root,
   .spz_t1019 .formWrapper form .form-field.state + .city {
     flex-basis: 100% !important;
     max-width: 100% !important;
   }
 
-  .spz_t1019 form .MuiGridLegacy-item label {
+  .spz_t1019 form .MuiGrid-root label {
     font-size: 16px !important;
   }
 
   .spz_t1019 form label.MuiFormLabel-filled,
-  .spz_t1019 form .MuiGridLegacy-item label.Mui-focused,
-  .spz_t1019 form .MuiGridLegacy-item.active.typing label.MuiFormLabel-root {
+  .spz_t1019 form .MuiGrid-root label.Mui-focused,
+  .spz_t1019 form .MuiGrid-root.active.typing label.MuiFormLabel-root {
     transform: translate(12px, -7px) scale(0.75) !important;
   }
 
@@ -1242,7 +1243,7 @@ select:-webkit-autofill:active {
 } */
 .spz_t1019
   .formWrapper
-  .MuiGridLegacy-item.How_Did_You_Hear_About_Geotab__select
+  .MuiGrid-root.How_Did_You_Hear_About_Geotab__select
   select:hover {
   border-color: var(--Accents-Accent-1, #0078d3) !important;
 }
@@ -1263,11 +1264,11 @@ select:-webkit-autofill:active {
 
 .spz_t1019
   form
-  .MuiGridLegacy-item.How_Did_You_Hear_About_Geotab__select
+  .MuiGrid-root.How_Did_You_Hear_About_Geotab__select
   label.Mui-focused,
 .spz_t1019
   form
-  .MuiGridLegacy-item.How_Did_You_Hear_About_Geotab__select.active.typing
+  .MuiGrid-root.How_Did_You_Hear_About_Geotab__select.active.typing
   label.MuiFormLabel-root {
   transform: translate(-5px, -11px) scale(0.85) !important;
 }
