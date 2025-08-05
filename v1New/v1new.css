@@ -52,7 +52,7 @@
 /*Form Styling*/
 .spz_t1020 .formSection {
   padding: 18px 0;
-  background: url("//res.cloudinary.com/spiralyze/image/upload/f_auto/geotab/1003/bg_1.webp");
+  background: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/geotab/1003/bg_1.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -68,7 +68,7 @@
 }
 
 .spz_t1020 .formSection .banner {
-  background: url(//res.cloudinary.com/spiralyze/image/upload/v1746447223/geotab/1019/badge_3.svg);
+  background: url(https://res.cloudinary.com/spiralyze/image/upload/v1746447223/geotab/1019/badge_3.svg);
   width: 286px;
   height: 32px;
   position: absolute;
@@ -428,7 +428,7 @@ select:-webkit-autofill:active {
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
   right: 13px;
-  background: url(//res.cloudinary.com/spiralyze/image/upload/geotab/1001/chevron-down_1.svg);
+  background: url(https://res.cloudinary.com/spiralyze/image/upload/geotab/1001/chevron-down_1.svg);
   background-size: cover;
   -webkit-transition: all 0.3s;
   transition: background 0.3s;
@@ -525,7 +525,7 @@ select:-webkit-autofill:active {
   display: block;
   min-width: 20px;
   height: 20px;
-  background: url("//res.cloudinary.com/spiralyze/image/upload/v1708432504/geotab/1001/checkbox.svg");
+  background: url("https://res.cloudinary.com/spiralyze/image/upload/v1708432504/geotab/1001/checkbox.svg");
   background-size: 20px;
   background-repeat: no-repeat;
   margin-right: 10px;
@@ -537,7 +537,7 @@ select:-webkit-autofill:active {
   .regionOption
   input:checked
   + label:before {
-  background: url("//res.cloudinary.com/spiralyze/image/upload/v1708432970/geotab/1001/checkedbox.svg");
+  background: url("https://res.cloudinary.com/spiralyze/image/upload/v1708432970/geotab/1001/checkedbox.svg");
   background-size: 20px;
   background-repeat: no-repeat;
 }
@@ -600,7 +600,7 @@ select:-webkit-autofill:active {
   content: "";
   width: 20px;
   height: 20px;
-  background: url("//res.cloudinary.com/spiralyze/image/upload/v1708432504/geotab/1001/checkbox.svg");
+  background: url("https://res.cloudinary.com/spiralyze/image/upload/v1708432504/geotab/1001/checkbox.svg");
   background-size: 20px;
   background-repeat: no-repeat;
   position: absolute;
@@ -614,7 +614,7 @@ select:-webkit-autofill:active {
   .MuiCheckbox-root
   input:checked
   ~ .MuiTouchRipple-root:before {
-  background: url("//res.cloudinary.com/spiralyze/image/upload/v1708432970/geotab/1001/checkedbox.svg");
+  background: url("https://res.cloudinary.com/spiralyze/image/upload/v1708432970/geotab/1001/checkedbox.svg");
   background-size: 20px;
   background-repeat: no-repeat;
 }
@@ -822,7 +822,7 @@ select:-webkit-autofill:active {
     top: 50%;
     transform: translateY(-50%);
     right: 13px;
-    background: url(//res.cloudinary.com/spiralyze/image/upload/geotab/1001/chevron-down_1.svg);
+    background: url(https://res.cloudinary.com/spiralyze/image/upload/geotab/1001/chevron-down_1.svg);
     background-size: cover;
     -webkit-transition: all 0.3s;
     transition: background 0.3s;
@@ -962,7 +962,7 @@ select:-webkit-autofill:active {
     width: 20px;
     height: 20px;
     display: block;
-    background: url("//res.cloudinary.com/spiralyze/image/upload/f_auto/geotab/2001/checkbox_webp.webp");
+    background: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/geotab/2001/checkbox_webp.webp");
     background-position: center;
     background-size: cover;
     margin-right: 10px;
@@ -975,7 +975,7 @@ select:-webkit-autofill:active {
     label
     input:checked
     + p:before {
-    background: url("//res.cloudinary.com/spiralyze/image/upload/f_auto/geotab/2001/checkbox_1_webp.webp");
+    background: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/geotab/2001/checkbox_1_webp.webp");
     background-position: center;
     background-size: cover;
   }
@@ -1060,7 +1060,7 @@ select:-webkit-autofill:active {
 
 @media (max-width: 555px) {
   .spz_t1020 .formSection {
-    background: url(//res.cloudinary.com/spiralyze/image/upload/f_auto/geotab/1003/bg_mobile.webp);
+    background: url(https://res.cloudinary.com/spiralyze/image/upload/f_auto/geotab/1003/bg_mobile.webp);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -1181,7 +1181,7 @@ select:-webkit-autofill:active {
 .spz_t1020 .formWrapper .privacyPolicy .MuiCheckbox-root .checkboxPrivacy {
   width: 20px;
   height: 20px;
-  background: url("//res.cloudinary.com/spiralyze/image/upload/v1707992010/geotab/2002/checkbox.svg");
+  background: url("https://res.cloudinary.com/spiralyze/image/upload/v1707992010/geotab/2002/checkbox.svg");
   background-size: 20px;
   background-position: center;
   margin-right: 10px;
@@ -1213,7 +1213,7 @@ select:-webkit-autofill:active {
   .MuiCheckbox-root
   input:checked
   ~ .checkboxPrivacy {
-  background-image: url("//res.cloudinary.com/spiralyze/image/upload/v1707992012/geotab/2002/checkbox_1.svg");
+  background-image: url("https://res.cloudinary.com/spiralyze/image/upload/v1707992012/geotab/2002/checkbox_1.svg");
 }
 
 .spz_t1020 .formWrapper .rating {
