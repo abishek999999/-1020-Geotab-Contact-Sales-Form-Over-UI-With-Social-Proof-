@@ -1598,11 +1598,19 @@
           "afterend",
           `
                 <div class="rating">
-                    <img draggable="false" src="//res.cloudinary.com/spiralyze/image/upload/f_auto/geotab/1020/01_label_1.webp" alt="G2 Winter Winner label">
-                    <img draggable="false" src="//res.cloudinary.com/spiralyze/image/upload/f_auto/geotab/1020/02_label_1.webp" alt="Capterra label">
-                    <img draggable="false" src="//res.cloudinary.com/spiralyze/image/upload/f_auto/geotab/1020/03_label_1.webp" alt="ABI research label">
-                    <img draggable="false" src="//res.cloudinary.com/spiralyze/image/upload/f_auto/geotab/1020/04_label_1.webp" alt="Get app label">
-                    <img draggable="false" src="//res.cloudinary.com/spiralyze/image/upload/f_auto/geotab/1020/05_label_1.webp" alt="Software advice label">
+                  <picture>
+                    <source
+                      media="(max-width: 767px)"
+                      srcset="
+                        https://res.cloudinary.com/spiralyze/image/upload/f_auto/geotab/1020/awards_6.webp
+                      "
+                    />
+                    <img
+                      draggable="false"
+                      src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/geotab/1020/awards_4.webp"
+                      alt="awards logo"
+                    />
+                  </picture>
                 </div>
             `
         );
