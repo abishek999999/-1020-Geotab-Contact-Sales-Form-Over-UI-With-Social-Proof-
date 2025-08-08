@@ -1453,7 +1453,9 @@
           .addEventListener("click", function () {
             var allFieldsFilled = 0;
             var checkfields = document.querySelectorAll(
-              '.spz_t1020 .formWrapper .step2Field input.MuiSelect-nativeInput:not([placeholder="Select at least two options"]), .spz_t1020 .formWrapper .step2Field input.MuiInputBase-input, .spz_t1020 .formWrapper .step2Field select:not(#multiple_region_select__c)'
+              `.spz_t1020 .formWrapper .step2Field div:not(#multiple_region_select__c) + input.MuiSelect-nativeInput,
+               .spz_t1020 .formWrapper .step2Field input.MuiInputBase-input,
+               .spz_t1020 .formWrapper .step2Field select:not(#multiple_region_select__c)`
             );
             var emptyFields = [];
 
